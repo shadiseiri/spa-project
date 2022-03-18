@@ -1,10 +1,12 @@
-import styles from './App.module.css';
+// import styles from './App.module.css';
+import NavBar from "./Components/NavBar/NavBar";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div >
-
-    </div>
+    <Router>
+      <NavBar />
+    </Router>
   );
 }
 
