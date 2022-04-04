@@ -9,16 +9,16 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
-} from "./NavBarElements";
+} from "./NavbarElements";
 import { FaBars } from "react-icons/fa";
 
-const NavBar = () => {
+const NavBar = ({toggleHandler}) => {
   return (
     <>
       <Nav>
         <NavBarContainer>
           <NavLogo to="/">MEGAJS</NavLogo>
-          <MobileIcon>
+          <MobileIcon onClick={toggleHandler} >
             <FaBars />
           </MobileIcon>
           <NavMenu>
