@@ -1,23 +1,48 @@
-import React from 'react'
-import { HeroBg, HeroContainer, HeroContent, HeroH1, HeroP, VideoBg } from './HeroElements'
-import Video from '../../videos/Video.mp4'
-
-
+import React, { useState } from "react";
+import {
+  ArrowForward,
+  ArrowRight,
+  HeroBg,
+  HeroBtnWrapper,
+  HeroContainer,
+  HeroContent,
+  HeroH1,
+  HeroP,
+  VideoBg,
+} from "./HeroElements";
+import { Button } from "../ButtonElements";
+import Video from "../../videos/Video.mp4";
 
 const HeroSection = () => {
+  const [hover, setHover] = useState(false);
+
+  const hoverHandler = () => setHover(!hover);
+
   return (
     <>
-    <HeroContainer>
+      <HeroContainer>
         <HeroBg>
-            <VideoBg muted autoPlay loop src={Video} type='video/mp4' />
+          <VideoBg muted autoPlay loop src={Video} type="video/mp4" />
         </HeroBg>
         <HeroContent>
           <HeroH1>JS Is The King</HeroH1>
           <HeroP>Learning JS And Frameworks</HeroP>
+          <HeroBtnWrapper>
+            <Button
+              to="/"
+              onMouseEnter={hoverHandler}
+              onMouseLeave={hoverHandler}
+              primary
+              fontBig
+              big
+            >
+              Get Started {hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
+          </HeroBtnWrapper>
         </HeroContent>
-    </HeroContainer>
+      </HeroContainer>
     </>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
