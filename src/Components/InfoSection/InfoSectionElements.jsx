@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const InfoContainer = styled.div`
-color: #fff;
-background: ${({lightBg}) => (lightBg ? "#f9f9f9" : "#010606")} ;
+  color: #fff;
+  background: ${({ lightBg }) => (lightBg ? "#f9f9f9" : "#010606")};
 
-@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 100px 0;
-}
-
+  }
 `;
 
 export const InfoWrapper = styled.div`
@@ -41,12 +40,42 @@ export const Column1 = styled.div`
   grid-area: col1;
 `;
 
-export const TextWrapper = styled.div``;
+export const TextWrapper = styled.div`
+  max-width: 540px;
+  padding-top: 0;
+  padding-bottom: 60px;
+`;
 
-export const TopLine = styled.h1``;
+export const TopLine = styled.p`
+  color: #fab209;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+`;
 
-export const Heading = styled.h2``;
+export const Heading = styled.h2`
+  margin-bottom: 24px;
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: ${({ lightBg }) => (lightBg ? "#010606" : "#f7f8fa")};
 
-export const Subtitle = styled.p``;
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
+`;
 
-export const BtnWrapper = styled.div``;
+export const Subtitle = styled.p`
+  max-width: 440px;
+  margin-bottom: 35px;
+  font-size: 18px;
+  color: ${({ lightBg }) => (lightBg ? "#010606" : "#f7f8fa")};
+`;
+
+export const BtnWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`;
