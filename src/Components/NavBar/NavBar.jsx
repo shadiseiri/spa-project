@@ -37,6 +37,9 @@ const NavBar = ({ toggleHandler }) => {
             <NavItem>
               <NavLinks to="roadmap">Road Map</NavLinks>
             </NavItem>
+            <NavItem>
+              <NavLinks to="features">Features</NavLinks>
+            </NavItem>
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signin">Sign in</NavBtnLink>
