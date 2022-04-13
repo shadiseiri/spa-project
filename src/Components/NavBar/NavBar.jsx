@@ -12,13 +12,13 @@ import {
 } from "./NavbarElements";
 import { FaBars } from "react-icons/fa";
 
-const NavBar = ({toggleHandler}) => {
+const NavBar = ({ toggleHandler }) => {
   return (
     <>
       <Nav>
         <NavBarContainer>
           <NavLogo to="/">MEGAJS</NavLogo>
-          <MobileIcon onClick={toggleHandler} >
+          <MobileIcon onClick={toggleHandler}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
@@ -26,13 +26,16 @@ const NavBar = ({toggleHandler}) => {
               <NavLinks to="/">Home</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/courses">Courses</NavLinks>
+              <NavLinks to="about">About</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="/blog">Blog</NavLinks>
+              <NavLinks to="courses">Courses</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks t0="/roadmap">Road Map</NavLinks>
+              <NavLinks to="blog">Blog</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="roadmap">Road Map</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>

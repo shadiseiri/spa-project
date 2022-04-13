@@ -33,6 +33,7 @@ const HeroSection = () => {
               onMouseEnter={hoverHandler}
               onMouseLeave={hoverHandler}
               primary
+              dark
               fontBig
               big
             >
