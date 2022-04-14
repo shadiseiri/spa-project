@@ -1,5 +1,20 @@
 import React from "react";
-import { FooterContainer, FooterLink, FooterLinksContainer, FooterLinksItem, FooterLinksWrapper, FooterLinkTitle, FooterWrap } from "./FooterElements";
+import {
+  FooterContainer,
+  FooterLink,
+  FooterLinksContainer,
+  FooterLinksItem,
+  FooterLinksWrapper,
+  FooterLinkTitle,
+  FooterWrap,
+  SocialIconsLink,
+  SocialIconsWrapper,
+  SocialLogo,
+  SocialMediaContainer,
+  SocialMediaWrapper,
+  WebSiteRights,
+} from "./FooterElements";
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -40,6 +55,26 @@ const Footer = () => {
               </FooterLinksItem>
             </FooterLinksWrapper>
           </FooterLinksContainer>
+          <SocialMediaContainer>
+            <SocialMediaWrapper>
+              <SocialLogo to='/'>ShadiSeiri</SocialLogo>
+              <WebSiteRights>shadiseiri&copy;2022</WebSiteRights>
+              <SocialIconsWrapper>
+                <SocialIconsLink href="/">
+                  <FaFacebook />
+                </SocialIconsLink>
+                <SocialIconsLink href="/">
+                  <FaYoutube />
+                </SocialIconsLink >
+                <SocialIconsLink href="/">
+                  <FaInstagram/>
+                </SocialIconsLink>
+                <SocialIconsLink href="/">
+                  <FaTwitter />
+                </SocialIconsLink>
+              </SocialIconsWrapper>
+            </SocialMediaWrapper>
+          </SocialMediaContainer>
         </FooterWrap>
       </FooterContainer>
     </>
