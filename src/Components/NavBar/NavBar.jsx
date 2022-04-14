@@ -1,4 +1,6 @@
-import React , {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
+import { animateScroll as scroll } from "react-scroll";
+
 import {
   Nav,
   NavBarContainer,
@@ -12,54 +14,94 @@ import {
 } from "./NavbarElements";
 import { FaBars } from "react-icons/fa";
 
-
-
 const NavBar = ({ toggleHandler }) => {
-const [scrollNav, setScrollNav] = useState(false)
+  const [scrollNav, setScrollNav] = useState(false);
 
-const changeNav = () => {
-if (window.scrollY >= 80) {
-  setScrollNav(true)
-} else {
-  setScrollNav(false)
-}
-}
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
 
-useEffect(() => {
-  window.addEventListener('scroll', changeNav)
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
 
-},[])
-
-
-
-
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
 
   return (
     <>
       <Nav scrollNav={scrollNav}>
         <NavBarContainer>
-          <NavLogo to="/">MEGAJS</NavLogo>
+          <NavLogo to="/" onClick={toggleHome}>
+            ShadiSeiri
+          </NavLogo>
           <MobileIcon onClick={toggleHandler}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="/">Home</NavLinks>
+              <NavLinks
+                to="/"
+                smooth={true}
+                onClick={toggleHome}
+                duration={500}
+              >
+                Home
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="about">About</NavLinks>
+              <NavLinks
+                to="about"
+                smooth={true}
+                duration={500}
+                spy
+                offset={-80}
+              >
+                About
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="courses">Courses</NavLinks>
+              <NavLinks
+                to="courses"
+                smooth={true}
+                duration={500}
+                spy
+                offset={-80}
+              >
+                Courses
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="blog">Blog</NavLinks>
+              <NavLinks to="blog" smooth={true} duration={500} spy offset={-80}>
+                Blog
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="roadmap">Road Map</NavLinks>
+              <NavLinks
+                to="roadmap"
+                smooth={true}
+                duration={500}
+                spy
+                offset={-80}
+              >
+                Road Map
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="features">Features</NavLinks>
+              <NavLinks
+                to="features"
+                smooth={true}
+                duration={500}
+                spy
+                offset={-80}
+              >
+                Features
+              </NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
